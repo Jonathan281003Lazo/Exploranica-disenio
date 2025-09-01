@@ -49,7 +49,7 @@
                         <li class="items-menu transition-nav"><a href="#">Inicio</a></li>
                         <li class="items-menu transition-nav"><a href="assets/vistas/about-us.html">Acerca de</a></li>
                         <li class="items-menu transition-nav"><a href="#">Ayuda</a></li>
-                        <li class="items-menu log-btn"><a href="/assets/vistas/login.html">Login</a></li>
+                        <li class="items-menu log-btn"><a href="/assets/vistas/login.html">Iniciar</a></li>
 
                     </ul>
 
@@ -169,7 +169,7 @@
             
         </div>
 
-        <!-- /--/ OUR CATEGORIES /--/ -->
+        <!-- === CATEGORIAS === -->
         <div class="our-categories-container">
             <div class="box-our-categories">
                 <h1>Descubre Nuestras categorías</h1>
@@ -183,7 +183,8 @@
                             <div class="card-data">
                                 <h3 class="card-name">Gastronomía</h3>
                                 <p class="card-description">Prueba la comida nicaragüense que combina raices indígenas, españolas y africanas,  con sabores que varían entre el Pacífico y el Caribe.</p>
-                                <a href="#" class="card-button">Ver más</a>
+                                <!-- <a href="#" class="card-button open-modal">Ver más</a> -->
+                                 <button class="card-button" id="oppen-moddal">Ver mas</button>
                             </div>
                         </article>
 
@@ -194,7 +195,7 @@
                             <div class="card-data">
                                 <h3 class="card-name">Hospedaje</h3>
                                 <p class="card-description">Descubre alojamientos únicos que combinan cultura, historia y naturaleza. Desde ecolodges en islas volcánicas y haciendas cafetaleras</p>
-                                <a href="#" class="card-button">Ver más</a>
+                                <button id="oppen-moddal" class="card-button">Ver más</button>
                             </div>
                         </article>
 
@@ -205,7 +206,7 @@
                             <div class="card-data">
                                 <h3 class="card-name">cultura</h3>
                                 <p class="card-description">Conoce lo Rica y vibrante, con tradiciones, música, danzas y festividades que reflejan su historia y diversidad, invitando a vivir una experiencia auténtica y llena de color.</p>
-                                <a href="#" class="card-button">Ver más</a>
+                                <button id="oppen-moddal" class="card-button">Ver más</button>
                             </div>
                         </article>
 
@@ -216,7 +217,7 @@
                             <div class="card-data">
                                 <h3 class="card-name">Deporte extremo</h3>
                                 <p class="card-description">Nicaragua te invita a vivir la emoción del Surf en olas de clase mundial, canopy entre selvas, y mucho más te esperan en escenarios naturales únicos. ¡Atrévete a sentir la aventura como nunca antes!</p>
-                                <a href="#" class="card-button">Ver más</a>
+                                <button id="oppen-moddal" class="card-button">Ver más</button>
                             </div>
                         </article>
 
@@ -227,12 +228,76 @@
                             <div class="card-data">
                                 <h3 class="card-name">Artesania</h3>
                                 <p class="card-description">Colorida y creativa, con piezas de cerámica, madera, cuero y textiles que reflejan la identidad cultural y el talento de sus artesanos...</p>
-                                <a href="#" class="card-button">Ver más</a>
+                                <button id="oppen-moddal" class="card-button">Ver más</button>
                             </div>
                         </article>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- === MODALS === -->
+        <div class="modal-overlay" id="modal11">
+            
+            <div class="modal">
+                <div class="modal-header">Gastronomia</div>
+                <div class="modal-body">
+
+                    <p>Aqui puedes poner más detalles sobre la gastronomía nicaraguense 🍲.</p>
+                
+                </div>
+                <button class="close-modal">Cerrar</button>
+
+            </div>
+
+        </div>
+
+        <div class="modal-overlay" id="modal12">
+            
+            <div class="modal">
+
+                <h2>Hospedaje</h2>
+                <p>Más detalles sobre hospedajes únicos en Nicaragua 🏡.</p>
+                <button class="close-modal">Cerrar</button>
+
+            </div>
+
+        </div>
+
+        <div class="modal-overlay" id="modal13">
+            
+            <div class="modal">
+
+                <h2>Cultura</h2>
+                <p>Mas detalles acerca de la cultura Nicaraguense.</p>
+                <button class="close-modal">Cerrar</button>
+
+            </div>
+
+        </div>
+
+        <div class="modal-overlay" id="modal14">
+            
+            <div class="modal">
+
+                <h2>Deporte extremo</h2>
+                <p>Conoce los deportes extremos de Nicaragua.</p>
+                <button class="close-modal">Cerrar</button>
+
+            </div>
+
+        </div>
+
+        <div class="modal-overlay" id="modal15">
+            
+            <div class="modal">
+
+                <h2>Artesania</h2>
+                <p>Aqui tendras informacion de la artesania unica de nuestro paiz.</p>
+                <button class="close-modal">Cerrar</button>
+
+            </div>
+
         </div>
 
         <!-- Nicaragua en el mundo -->
@@ -264,13 +329,13 @@
                     <div class="facebook">
 
                         <i class="fab fa-facebook"></i>
-                        <a href="#">@Explora_Nica</a>
+                        <a href="https://www.facebook.com/profile.php?id=61576893070847">@Explora_Nica</a>
 
                     </div>
                     <div class="instagram">
 
                         <i class="fab fa-instagram"></i>
-                        <a href="#">@Explora_Nica</a>
+                        <a href="https://www.instagram.com/explora_nicaa?igsh=ZjFpd3RuMm40aGZ5">@Explora_Nica</a>
 
                     </div>
                     <div class="tiktok">
@@ -305,6 +370,7 @@
 
      <!-- SCRIPTS -->
      <script src="assets/js/app.js"></script>
+     <script src="assets/js/modal.js"></script>
 
 </body>
 </html>

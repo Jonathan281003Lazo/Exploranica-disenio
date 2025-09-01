@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal sin Bootstrap</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Estilos del overlay (fondo oscuro) */
+    .modal-overlay {
+      display: none; /* Oculto por defecto */
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      /* display: flex; */
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    /* Estilos del modal */
+    .modal {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      width: 400px;
+      max-width: 90%;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      text-align: center;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    /* Animación suave */
+    @keyframes fadeIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-header {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    .modal-footer {
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .btn-primary {
+      background: #007BFF;
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: #ccc;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <button id="openModal" class="btn btn-primary">Abrir Modal</button>
+
+  <!-- Overlay con modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">Título del Modal</div>
+      <div class="modal-body">
+        <p>Este es un ejemplo de modal sin Bootstrap 😎.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="closeModal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const openBtn = document.getElementById('openModal');
+    const closeBtn = document.getElementById('closeModal');
+    const modalOverlay = document.getElementById('modalOverlay');
+
+    // Abrir modal
+    openBtn.addEventListener('click', () => {
+      modalOverlay.style.display = 'flex';
+    });
+
+    // Cerrar modal
+    closeBtn.addEventListener('click', () => {
+      modalOverlay.style.display = 'none';
+    });
+
+    // Cerrar si hacen clic fuera del modal
+    window.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) {
+        modalOverlay.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>

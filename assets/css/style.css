@@ -24,6 +24,7 @@
     --blur-celeste: #0076b680;
     --very-dark-grayish-red: #423C3C;
     --celeste-footer: #076FA4;
+    --negro-transparente: rgba(0,0,0,0.6);
 
     /* tipografias */
     --principal-poppins-font: 'Poppins', sans-serif;
@@ -599,6 +600,34 @@ nav ul{
     background: var(--negro);
 }
 
+
+/* --- MODAL --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--negro-transparente);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: var(--blanco);
+    padding: 20px;
+    border-radius: 12px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+
+
 .nicaragua-word-container {
     display: flex;
     justify-content: center; /* centra horizontal */
@@ -694,15 +723,15 @@ nav ul{
 
 footer {
     width: 100%;
-    height: 320px;
+    min-height: 320px;
     background: var(--celeste-footer);
+    font-family: var(--principal-poppins-font); /* Fuente global del footer */
 }
 
 .container-footer {
     display: flex;
-    flex-wrap: wrap; /* corregido */
+    flex-wrap: wrap;
     width: 100%;
-    /* height: 100%; */
     color: var(--blanco);
     list-style: none;
 }
@@ -730,7 +759,6 @@ footer {
 
 .social-medias-container h4,
 .more-contacts-container h4 {
-    font-family: var(--principal-poppins-font);
     font-size: 24px;
     padding: 2px 0;
 }
@@ -753,32 +781,148 @@ footer {
 .more-contacts-container a {
     color: var(--blanco);
     text-decoration: none;
-    font-family: var(--principal-poppins-fon);
     font-size: 20px;
     margin: 5px 0;
 }
 
 .social-medias-container a {
-    display: block;       /* asegura que cada enlace quede en su propia línea */
-    margin-left: 8px;     /* separa un poco el texto del icono */
-    margin-bottom: 12px;  /* da más separación entre enlaces */
-}
-
-.Copyright {
-    /* position: absolute; */
-    font-family: var(--principal-poppins-font);
-    color: var(--blanco);
-    margin: 50px 50px;
-    font-size: 24px;
+    display: block;
+    margin-left: 8px;
+    margin-bottom: 12px;
 }
 
 .more-contacts-container h4 {
-    margin-bottom: 10px; /* separación hacia abajo */
+    margin-bottom: 10px;
 }   
 
 .more-contacts-container a {
-    display: block;   /* hace que cada enlace ocupe su propia línea */
-    margin-bottom: 12px;  /* separación entre enlaces */
+    display: block;
+    margin-bottom: 12px;
 }
-/* responsive */
+
+.Copyright {
+    color: var(--blanco);
+    margin: 30px 50px;
+    font-size: 24px;
+}
+
+/* --- Responsive Styles --- */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .slide-content {
+    width: 90%;
+    margin-left: 20px;
+    top: auto;
+    bottom: 50px;
+  }
+
+  .about-us {
+    flex-direction: column;
+    margin: 100px 20px;
+    height: auto;
+  }
+
+  .img-about-us {
+    margin: 30px auto 0;
+    width: 100%;
+    max-width: 500px;
+    height: 280px;
+    background-size: cover;
+  }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+  .slider-container {
+    height: auto;
+  }
+
+  .slide {
+    height: auto;
+  }
+
+  .slide img {
+    height: auto;
+  }
+
+  .slide-content h1 {
+    font-size: 24px;
+  }
+
+  .slide-content p {
+    font-size: 14px;
+  }
+
+  #slide-button {
+    width: 140px;
+    height: 45px;
+    font-size: 14px;
+  }
+
+  .top-destination-container h3 {
+    font-size: 24px;
+  }
+
+  .slider-top-destination {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .slide-TD,
+  .active-top-destination {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  footer .container-footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .social-medias-container,
+  .more-contacts-container {
+    margin: 20px 0;
+  }
+
+  .Copyright {
+    margin: 20px auto;
+    font-size: 14px;
+  }
+}
+
+/* Extra pequeño (celulares <480px) */
+@media (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo img {
+    width: 140px;
+  }
+
+  .slide-content {
+    font-size: 14px;
+    margin-left: 10px;
+    width: 95%;
+  }
+
+  .about-us h3 {
+    font-size: 22px;
+  }
+}
  
