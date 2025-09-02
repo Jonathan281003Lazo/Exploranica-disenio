@@ -601,7 +601,7 @@ nav ul{
 }
 
 
-/* --- MODAL --- */
+/* --- MODAL ---
 .modal-overlay {
     display: none;
     position: fixed;
@@ -624,7 +624,7 @@ nav ul{
     box-shadow: 0 8px 25px rgba(0,0,0,0.2);
     text-align: center;
     animation: fadeIn 0.3s ease-in-out;
-}
+} */
 
 
 
@@ -806,123 +806,163 @@ footer {
     font-size: 24px;
 }
 
-/* --- Responsive Styles --- */
+/* ----- Laptops grandes (≤1280px) ----- */
+@media (max-width: 1280px) {
+  .logo img { width: 150px; }
 
-/* Tablets y pantallas medianas */
-@media (max-width: 1024px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 20px;
+  .slide-content {
+    width: 500px;
+    margin-left: 80px;
+  }
+  .slide-content h1 { font-size: 32px; }
+  .slide-content p { font-size: 16px; }
+  #slide-button {
+    width: 150px;
+    height: 50px;
+    font-size: 16px;
   }
 
+  .about-us { margin: 100px 80px; }
+  .img-about-us { width: 450px; height: 320px; }
+}
+
+/* ----- Tablets horizontales (≤1024px) ----- */
+@media (max-width: 1024px) {
+  nav ul { gap: 8px; }
+  .logo img { width: 130px; }
+
+  .slide-content {
+    width: 420px;
+    margin-left: 60px;
+  }
+  .slide-content h1 { font-size: 28px; }
+
+  .about-us {
+    margin: 80px 50px;
+    height: auto;
+    flex-direction: row;
+    gap: 40px;
+  }
+  .img-about-us { width: 380px; height: 280px; }
+
+  /* Categorías */
+  .categorias-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Top destinos slider */
+  .top-destinos-slider .slide { flex: 0 0 50%; }
+}
+
+/* ----- Tablets verticales (≤768px) ----- */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 8px;
+  }
   nav ul {
     flex-wrap: wrap;
-    justify-content: flex-start;
+    margin: 10px 0;
   }
 
   .slide-content {
     width: 90%;
-    margin-left: 20px;
-    top: auto;
-    bottom: 50px;
+    margin: 0 auto;
+    top: 200px;
+    text-align: center;
+  }
+  .slide-content h1 { font-size: 24px; }
+  .slide-content p { font-size: 15px; }
+  #slide-button {
+    width: 140px;
+    height: 45px;
+    font-size: 15px;
   }
 
   .about-us {
     flex-direction: column;
-    margin: 100px 20px;
-    height: auto;
+    align-items: center;
+    margin: 60px 20px;
+    gap: 30px;
   }
-
   .img-about-us {
-    margin: 30px auto 0;
-    width: 100%;
-    max-width: 500px;
-    height: 280px;
-    background-size: cover;
-  }
-}
-
-/* Móviles */
-@media (max-width: 768px) {
-  .slider-container {
-    height: auto;
-  }
-
-  .slide {
-    height: auto;
-  }
-
-  .slide img {
-    height: auto;
-  }
-
-  .slide-content h1 {
-    font-size: 24px;
-  }
-
-  .slide-content p {
-    font-size: 14px;
-  }
-
-  #slide-button {
-    width: 140px;
-    height: 45px;
-    font-size: 14px;
-  }
-
-  .top-destination-container h3 {
-    font-size: 24px;
-  }
-
-  .slider-top-destination {
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-  }
-
-  .slide-TD,
-  .active-top-destination {
     width: 90%;
-    margin-bottom: 20px;
+    height: 250px;
+    margin: 0 auto;
   }
-
-  footer .container-footer {
-    flex-direction: column;
-    align-items: center;
+  .text-container-au {
+    width: 100%;
     text-align: center;
   }
 
-  .social-medias-container,
-  .more-contacts-container {
-    margin: 20px 0;
-  }
+  /* Categorías → 2 columnas */
+  .categorias-container { grid-template-columns: repeat(2, 1fr); }
 
-  .Copyright {
-    margin: 20px auto;
-    font-size: 14px;
-  }
-}
+  /* Top destinos slider → 1 por vista */
+  .top-destinos-slider .slide { flex: 0 0 100%; }
 
-/* Extra pequeño (celulares <480px) */
-@media (max-width: 480px) {
-  nav ul {
+  /* Footer */
+  footer {
     flex-direction: column;
     align-items: center;
-  }
-
-  .logo img {
-    width: 140px;
-  }
-
-  .slide-content {
-    font-size: 14px;
-    margin-left: 10px;
-    width: 95%;
-  }
-
-  .about-us h3 {
-    font-size: 22px;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
   }
 }
- 
+
+/* ----- Teléfonos (≤599px) ----- */
+@media (max-width: 599px) {
+  header {
+    flex-direction: column;
+    padding: 5px;
+  }
+  .logo img { width: 110px; }
+  nav ul {
+    flex-direction: column;
+    margin: 5px 0;
+  }
+
+  /* Slider principal */
+  .slider-container,
+  .slide { height: 450px; }
+  .slide img { height: 450px; }
+  .slide-content {
+    width: 95%;
+    top: 150px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .slide-content h1 { font-size: 20px; }
+  .slide-content p { font-size: 14px; }
+  #slide-button {
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  /* About Us */
+  .about-us { margin: 40px 15px; }
+  .img-about-us {
+    width: 100%;
+    height: 220px;
+  }
+  .contenido-container h4 { font-size: 20px; }
+  .contenido-container h3 { font-size: 24px; }
+
+  /* Categorías → 1 columna */
+  .categorias-container { grid-template-columns: 1fr; }
+  .categorias-container .card { width: 100%; }
+
+  /* Top destinos slider */
+  .top-destinos-slider .slide { flex: 0 0 100%; }
+
+  /* Footer */
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+  }
+}
